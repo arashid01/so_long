@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:01:27 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/09 22:59:01 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:43:14 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static void	initial_values(t_game *game, t_map_info *info)
 static void	init_t_game(t_game *game)
 {
 	game->win = NULL;
-	game->imgs = NULL;
 	game->map = NULL;
 	game->moves = 0;
 	game->win_width = 0;
@@ -67,7 +66,7 @@ t_game	*initialize_game(char **map, t_map_info info)
 {
 	t_game	*game;
 
-	game = malloc(sizeof(t_game));
+	game = ft_calloc(1, sizeof(t_game));
 	game->ptr = mlx_init();
 	if (!game->ptr)
 	{

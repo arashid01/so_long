@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:00:50 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/09 22:52:13 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:28:11 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@
 
 typedef struct s_images
 {
-	int		width;
-	int		height;
 	void	*up;
 	void	*down;
 	void	*left;
@@ -54,7 +52,7 @@ typedef struct s_game
 {
 	void		*ptr;
 	void		*win;
-	t_images	*imgs;
+	t_images	imgs;
 	char		**map;
 	int			win_width;
 	int			win_height;
@@ -93,7 +91,6 @@ void		validate_map(char **map, t_map_info *info);
 int			valid_path(char **map, t_map_info *info);
 int			get_map_width(char **map);
 int			get_map_height(char **map);
-void		init_map_info(t_map_info *map_char);
 void		check_rectangular_map(char **map);
 
 int			handle_keypress(int key, t_game *game);

@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:01:46 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/09 23:36:55 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:27:57 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,4 @@ void	check_rectangular_map(char **map)
 			free_map_error(map, "Invalid map: map not rectangular");
 		i++;
 	}
-}
-
-void	init_map_info(t_map_info *map_info)
-{
-	map_info->p_flag = 0;
-	map_info->c_flag = 0;
-	map_info->e_flag = 0;
-	map_info->p_count = 0;
-	map_info->e_count = 0;
-	map_info->width = 0;
-	map_info->height = 0;
-	map_info->player_x = -1;
-	map_info->player_y = -1;
 }

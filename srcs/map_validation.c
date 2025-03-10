@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:01:39 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/09 23:36:30 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/10 21:34:00 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ void	validate_map(char **map, t_map_info *info)
 	int			i;
 	int			j;
 
-	init_map_info(info);
+	ft_bzero(info, sizeof(t_map_info));
 	info->width = get_map_width(map);
 	info->height = get_map_height(map);
 	if (info->height <= 2 || info->width <= 2)
-		free_map_error(map, "Invalid map: map width and height are too small");
+		free_map_error(map, "Invalid map");
 	check_wall_borders(map, info->width, info->height);
 	i = 0;
 	while (i < info->height)
