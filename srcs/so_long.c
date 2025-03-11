@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:02:38 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/10 15:29:56 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/11 12:41:33 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static int	check_map_extension(char *file)
 	char	*ext;
 
 	ext = ft_strrchr(file, '.');
+	if (!ext)
+		return (1);
 	if (ft_strncmp(ext, ".ber", -1) == 0)
 		return (0);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:02:04 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/09 23:04:43 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/11 12:35:40 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static void	move_player(t_game *game, int x, int y)
 {
 	int		new_x;
 	int		new_y;
-	char	next_char;
 
 	new_x = game->player_x + x;
 	new_y = game->player_y + y;
@@ -24,7 +23,6 @@ static void	move_player(t_game *game, int x, int y)
 		return ;
 	if (game->map[new_y][new_x] == 'C')
 		game->collectibles--;
-	next_char = game->map[new_y][new_x];
 	game->map[game->player_y][game->player_x] = '0';
 	game->map[game->exit_y][game->exit_x] = 'E';
 	game->map[new_y][new_x] = 'P';

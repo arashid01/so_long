@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:02:30 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/10 15:56:04 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/11 12:30:12 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ void	render_map(char **map, t_game *game)
 		j = 0;
 		while (map[i][j])
 		{
-			mlx_put_image_to_window(game->ptr,
-				game->win, game->imgs.way, j * 64, i * 64);
 			if (map[i][j] == 'P')
 				render_player(game, j, i);
 			else
