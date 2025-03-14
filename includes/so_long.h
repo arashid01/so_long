@@ -15,7 +15,7 @@
 
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
-# include <mlx.h>
+# include "minilibx-linux/mlx.h"
 # include <fcntl.h>
 
 # define ESC 65307

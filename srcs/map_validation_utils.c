@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:01:46 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/10 16:27:57 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/11 19:31:26 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,13 @@ int	get_map_width(char **map)
 {
 	int	width;
 
-	if (!map || !map[0])
+	if (!map)
 		ft_error("Invalid map: empty map");
+	if (!map[0])
+	{
+		free(map);
+		ft_error("Invalid map: empty map");
+	}
 	width = ft_strlen(map[0]);
 	return (width);
 }

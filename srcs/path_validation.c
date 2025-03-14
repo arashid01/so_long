@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:01:55 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/08 20:05:26 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/11 22:58:14 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ static char	**copy_map(char **map, int height)
 		map_copy[i] = ft_strdup(map[i]);
 		if (!map_copy[i])
 		{
-			free_map(map);
-			free_map(map_copy);
+			free(map_copy);
 			return (NULL);
 		}
 		i++;
@@ -57,6 +56,8 @@ int	valid_path(char **map, t_map_info *info)
 
 	valid = 1;
 	map_copy = copy_map(map, info->height);
+	if (!map_copy)
+		return (0);
 	flood_fill(map_copy, info->player_x, info->player_y, info);
 	i = 0;
 	while (map_copy[i])

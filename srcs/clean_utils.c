@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:01:09 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/11 12:18:34 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/11 21:52:08 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,18 @@ static void	destroy_images(t_game *game)
 
 void	destroy_game(t_game *game)
 {
+	if (!game)
+		return ;
 	destroy_images(game);
 	if (game->win)
 		mlx_destroy_window(game->ptr, game->win);
-	mlx_destroy_display(game->ptr);
-	free_map(game->map);
-	free(game->ptr);
+	if (game->ptr)
+	{
+		mlx_destroy_display(game->ptr);
+		free(game->ptr);
+	}
+	if (game->map)
+		free_map(game->map);
 	free(game);
 }
 

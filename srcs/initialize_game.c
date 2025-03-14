@@ -6,7 +6,7 @@
 /*   By: amrashid <amrashid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 16:01:27 by amrashid          #+#    #+#             */
-/*   Updated: 2025/03/11 12:19:30 by amrashid         ###   ########.fr       */
+/*   Updated: 2025/03/11 23:00:30 by amrashid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ t_game	*initialize_game(char **map, t_map_info info)
 	t_game	*game;
 
 	game = ft_calloc(1, sizeof(t_game));
+	if (!game)
+	{
+		free_map(map);
+		destroy_error(game);
+	}
 	game->ptr = mlx_init();
 	if (!game->ptr)
 	{
